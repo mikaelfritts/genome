@@ -1,0 +1,28 @@
+{
+  "name": "Generic-Backend-Solution",
+  "version": "0.0.0",
+  "description": "Generic Backend API",
+  "main": "server.js",
+  "dependencies": {
+    "validator": "~0.4.21",
+    "optimist": "~0.3.5",
+    "nano": "~3.3.6",
+    "restify": "~1.4.4",
+    "papercut": "0.0.4",
+    "nodemailer": "~0.3.37",
+    "email-templates": "0.0.7",
+    "node-static": "~0.6.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sourcebitsllc/Generic-Backend-Solution.git"
+  },
+  "author": "John Josef",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}

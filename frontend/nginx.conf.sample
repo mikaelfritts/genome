@@ -1,0 +1,26 @@
+worker_processes  1;
+
+events {
+    worker_connections  1024;
+}
+http {
+  include mime.types;
+  server {
+    listen   8082;
+    server_name  localhost;
+    access_log  localhost.access.log;
+    root dirname; # be sure to update this
+    
+    location /api {
+      proxy_pass http://184.73.160.99:3458;
+      proxy_set_header Host $host;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_pass_header Set-Cookie;
+      proxy_pass_header P3P;
+    }
+    
+    location / {
+      index index.html;
+    }
+  }
+}
