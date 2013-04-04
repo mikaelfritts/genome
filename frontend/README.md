@@ -1,4 +1,1 @@
-TAG! Admin panel
-=========
-
-HTML5 Frontend
+Genome Frontend
