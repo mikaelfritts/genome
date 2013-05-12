@@ -11,8 +11,8 @@ module.exports = function(app, nano, _) {
   var avatarController = require('./controllers/AvatarController')(params);
   var indexController = require('./controllers/IndexController')(params);
   var adminController = require('./controllers/admin/IndexController')(params);
-  var articlesController = require('./controllers/admin/ArticlesController')(params);
-  var artController = require('./controllers/admin/ArtController')(params);
+  var articlesController = require('./controllers/ArticlesController')(params);
+  var artController = require('./controllers/ArtController')(params);
   var notifierController = require('./controllers/NotifierController');
   
   var notifier = new notifierController(params);

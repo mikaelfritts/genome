@@ -39,7 +39,7 @@ function ArticlesController(params) {
         var article = new ArticleModel(body);
         resp.data(article.output());
         res.send(resp.responseCode, resp.output());
-      }
+      });
       return;
     }
     if(featured === true) {
@@ -135,7 +135,6 @@ function ArticlesController(params) {
         for(var i in body._revs_info) {
           db.destroy(req.params._id, body._revs_info[i].rev, function(err, body) {
 
-            }
           });
         }
         

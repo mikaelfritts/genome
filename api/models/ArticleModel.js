@@ -26,7 +26,7 @@ ArticleModel.prototype.output = function() {
     title: this.title,
     author: this.author,
     short_description: this.short_description,
-    content: this.content
+    content: this.content,
     tags: this.tags,
     featured: this.featured,
     create_time: this.create_time,

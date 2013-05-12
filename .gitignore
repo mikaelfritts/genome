@@ -6,3 +6,5 @@ tmp
 nginx.conf
 nginx.pid
 
+Capfile
+config
