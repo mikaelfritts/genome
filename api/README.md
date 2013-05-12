@@ -7,8 +7,9 @@ Requires nodejs 0.8.6 or higher and CouchDB installed and running. For working w
 > npm install
 > 
 > cp config.js.sample config.js
+> cp definitions.js.sample definitions.js
 
-Edit your config.js to suit your needs.
+Edit your config.js & defintions.js to suit your needs.
 
 > node server.js [-e development|production|...]
 
