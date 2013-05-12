@@ -1,0 +1,9 @@
+<div class="header">
+  <div class="header-content">
+    <ul class="menu">
+      <li ng-repeat="item in menuItems" class="{{item.class}}">
+        <a ng-class="checkActiveClass(item.url)" class="{{item.class}}" href="{{item.url}}">{{item.name}}</a>
+      </li>
+    </ul>
+  </div>
+</div>

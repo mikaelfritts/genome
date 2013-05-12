@@ -1,0 +1,5 @@
+<ul class="menu" ng-controller="AdminMenuCtrl">
+  <li ng-repeat="item in menuItems" class="{{item.class}}">
+    <a ng-class="checkActiveClass(item.url)" class="{{item.class}}" href="{{item.url}}">{{item.name}}</a>
+  </li>
+</ul>

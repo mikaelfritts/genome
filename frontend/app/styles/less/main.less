@@ -1,0 +1,221 @@
+@import "lesshat";
+@import "bootstrap/bootstrap.less";
+
+@font-face {
+  font-family: 'BebasNeueRegular';
+  src: url('fonts/BebasNeue-webfont.eot');
+  src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/BebasNeue-webfont.woff') format('woff'),
+       url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+       url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuliLight';
+  src: url('fonts/Muli-Light-webfont.eot');
+  src: url('fonts/Muli-Light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Muli-Light-webfont.woff') format('woff'),
+       url('fonts/Muli-Light-webfont.ttf') format('truetype'),
+       url('fonts/Muli-Light-webfont.svg#MuliLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuliLightItalic';
+  src: url('fonts/Muli-LightItalic-webfont.eot');
+  src: url('fonts/Muli-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Muli-LightItalic-webfont.woff') format('woff'),
+       url('fonts/Muli-LightItalic-webfont.ttf') format('truetype'),
+       url('fonts/Muli-LightItalic-webfont.svg#MuliLightItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuliRegular';
+  src: url('fonts/Muli-Regular-webfont.eot');
+  src: url('fonts/Muli-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Muli-Regular-webfont.woff') format('woff'),
+       url('fonts/Muli-Regular-webfont.ttf') format('truetype'),
+       url('fonts/Muli-Regular-webfont.svg#MuliRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MuliItalic';
+  src: url('fonts/Muli-Italic-webfont.eot');
+  src: url('fonts/Muli-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Muli-Italic-webfont.woff') format('woff'),
+       url('fonts/Muli-Italic-webfont.ttf') format('truetype'),
+       url('fonts/Muli-Italic-webfont.svg#MuliItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background: #fff;
+  color: #000;
+  min-height: 100%;
+  font-family: 'MuliLight', "sans-serif";
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-family: 'MuliRegular'
+}
+
+b, strong {
+  font-weight: normal;
+  font-family: 'MuliRegular';
+}
+
+i, em {
+  font-style: normal;
+  font-family: 'MuliLightItalic';
+}
+
+b i, strong i {
+  font-style: normal;
+  font-family: 'MuliItalic';
+}
+
+.site {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.site .header {
+  width: 100%;
+  height: 94px;
+  background: #000;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 1);
+}
+
+.site .header .header-content {
+  width: 960px;
+  height: 94px;
+  margin: 0 auto;
+}
+
+.site .header .header-content .menu {
+  width: 100%;
+  list-style: none;
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.site .header .header-content .menu li {
+  display: inline-block;
+  line-height: 94px;
+  height: 94px;
+  vertical-align: middle;
+  margin-right: 30px;
+}
+
+.site .header .header-content .menu li:last-child {
+  margin-right: 0;
+}
+
+.site .header .header-content .menu li a {
+  display: inline-block;
+  line-height: normal;
+  font-family: 'BebasNeueRegular';
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.site .header .header-content .menu li a:hover,
+.site .header .header-content .menu li a.active {
+  color: #eb8323;
+}
+
+.site .header .header-content .menu li a.logo {
+  width: 44px;
+  height: 50px;
+  background: url(../images/genome_icon.png) no-repeat;
+  text-indent: -9999px;
+}
+
+.site .header .header-content .menu li a.logo:hover,
+.site .header .header-content .menu li a.logo.active {
+  background: url(../images/genome_icon_active.png) no-repeat;
+}
+
+.site .content {
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.site .content .content-body {
+  width: 960px;
+  margin: 0 auto;
+  padding: 30px 0;
+  margin-bottom: 42px;
+}
+
+.site .featured-content {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.site .featured-content .feature {
+  width: 380px;
+  margin-right: 20px;
+  display: inline-block;
+}
+
+.site .featured-content .feature:nth-child(even) {
+  margin-right: 0;
+}
+
+.featured-content .feature .feature-heading {
+  background: #e7e7e7;
+  padding: 15px;
+  font-size: 36px;
+}
+
+.featured-content .feature .feature-content {
+  margin-top: 5px;
+  padding: 15px;
+  background: #e7e7e7;
+}
+
+.site .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  height: 42px;
+  width: 100%;
+  box-shadow: 0 1px 5px #fff;
+}
+
+.site .footer .footer-content {
+  width: 960px;
+  margin: 0 auto;
+  height: 34px;
+  padding: 4px;
+  text-align: center;
+  line-height: 34px;
+  vertical-align: middle;
+}
+
+.site .footer .footer-content img {
+  vertical-align: middle;
+}
