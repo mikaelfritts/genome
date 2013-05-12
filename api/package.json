@@ -1,7 +1,7 @@
 {
-  "name": "Generic-Backend-Solution",
+  "name": "GenomeAPI",
   "version": "0.0.0",
-  "description": "Generic Backend API",
+  "description": "Genome API",
   "main": "server.js",
   "dependencies": {
     "validator": ">= 0.4.21",
@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sourcebitsllc/Generic-Backend-Solution.git"
+    "url": "git@github.com:jjosef/genome.git"
   },
   "author": "John Josef",
   "license": "BSD",
