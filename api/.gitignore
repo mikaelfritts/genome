@@ -21,3 +21,4 @@ couchdb.stderr
 couchdb.stdout
 
 config.js
+definitions.js
