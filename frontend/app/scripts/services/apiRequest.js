@@ -1,16 +1,15 @@
 'use strict';
 
 angular.module('GenomeApp')
-  .factory('apiRequest', function () {
-    // Service logic
-    // ...
+  .factory('apiRequest', function ($http) {
+    var baseUrl = 'http://0.0.0.0:3458/';
 
-    var meaningOfLife = 42;
-
-    // Public API here
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      get: function (path, successCallback, errorCallback) {
+        $http.get(baseUrl + path).success(successCallback).error(errorCallback);
+      },
+      post: function(path, data, successCallback, errorCallback) {
+        $http.post(baseUrl + path, data).success(successCallback).error(errorCallback);
       }
     };
   });

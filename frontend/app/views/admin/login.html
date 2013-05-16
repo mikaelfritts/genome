@@ -1,11 +1,14 @@
 <div class="admin-login">
   <h2>Login to Admin Panel</h2>
-  <form>
+  <form name="form" class="css-form" novalidate>
     <p>
-      <input type="text" name="login" placeholder="Login">
+      <input type="text" name="login" placeholder="Login" ng-model="user.login" required>
     </p>
     <p>
-      <input type="password" name="password" placeholder="Password">
+      <input type="password" name="password" placeholder="Password" ng-model="user.password" required>
+    </p>
+    <p>
+      <button ng-click="doLogin(user)">Login</button>
     </p>
   </form>
 </div>

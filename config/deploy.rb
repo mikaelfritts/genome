@@ -26,7 +26,7 @@ namespace :deploy do
   task :npm_install do
     top.upload("./api/config.js", "#{File.join(current_path, 'api', 'config.js')}")
     top.upload("./api/definitions.js", "#{File.join(current_path, 'api', 'definitions.js')}")
-    run "cd #{File.join(current_path, 'api')} && sudo npm install"
+    run "cd #{File.join(current_path, 'api')} && npm install"
   end
   
   task :start do

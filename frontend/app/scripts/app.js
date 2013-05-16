@@ -1,6 +1,9 @@
 'use strict';
 
 angular.module('GenomeApp', ['LocalStorageModule'])
+  .config(['$httpProvider', function($httpProvider) {
+    delete $httpProvider.defaults.headers.common["X-Requested-With"];
+  }])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
@@ -74,6 +77,10 @@ angular.module('GenomeApp', ['LocalStorageModule'])
       .when('/admin/login', {
         templateUrl: 'views/admin/login.html',
         controller: 'AdminLoginCtrl'
+      })
+      .when('/admin/logout', {
+        templateUrl: 'views/admin/main.html',
+        controller: 'AdminCtrl'
       })
       .when('/account/main', {
         templateUrl: 'views/account/main.html',

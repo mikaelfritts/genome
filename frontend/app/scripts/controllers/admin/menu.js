@@ -7,7 +7,8 @@ angular.module('GenomeApp')
       {name: 'Products', class: 'admin-products', url: '#/admin/products'},
       {name: 'Artists', class: 'admin-artists', url: '#/admin/artists'},
       {name: 'Projects', class: 'admin-projects', url: '#/admin/projects'},
-      {name: 'Settings', class: 'admin-settings', url: '#/admin/settings'}
+      {name: 'Settings', class: 'admin-settings', url: '#/admin/settings'},
+      {name: 'Logout', class: 'admin-logout', url: '#/admin/logout'}
     ];
     
     $scope.checkActiveClass = function(path) {

@@ -180,7 +180,7 @@ module.exports = function(params, clear) {
     setViews('artists', artistsView);
   });
   createDB('articles', function() {
-    var artistsView = {"views": {
+    var articlesView = {"views": {
       "featured_articles": {
         "map": function(doc) {
           if(doc.type === 'article') {
