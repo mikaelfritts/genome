@@ -57,7 +57,7 @@ app.listen(config.env[NODE_ENV].port, function() {
 var fileServer = new static.Server('./uploads');
 
 require('http').createServer(function (request, response) {
-    request.addListener('end', function () {
+    //request.addListener('end', function () {
         fileServer.serve(request, response).addListener('error', function (err) {
           var pathParts = request.url.split('/');
           if(err && err.status === 404 && pathParts[1] === 'avatars') {
@@ -66,7 +66,7 @@ require('http').createServer(function (request, response) {
             response.end();
           }
         });
-    });
+    //});
 }).listen(config.env[process.env.NODE_ENV].static_port);
 
 var routes = require('./routes')(app, nano, _);

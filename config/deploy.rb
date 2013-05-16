@@ -7,7 +7,7 @@ set :application, "Genome Website"
 set :repository,  "git@github.com:jjosef/genome.git"
 set :branch, "master"
 set :deploy_via, :remote_cache
-set :ssh_options, {:forward_agent => true}
+#set :ssh_options, {:forward_agent => true}
 set :keep_releases, 3
 
 set :scm, :git
@@ -42,7 +42,7 @@ namespace :deploy do
   task :stop do 
     run "sudo forever stopall";
   end
-  after 'deploy:update_code' do
+  before 'deploy:restart' do
     npm_install
   end
 end
