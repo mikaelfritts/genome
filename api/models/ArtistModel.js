@@ -3,9 +3,10 @@ var BaseModel     = require('./index'),
 
 function ArtistModel() {
   this.name                   = '';
+  this.location               = '';
   this.email                  = '';
   this.phone                  = '';
-  this.short_description      = '';
+  this.description            = '';
   this.bio                    = '';
   this.tags                   = '';
   this.featured               = false;
@@ -21,15 +22,33 @@ function ArtistModel() {
 ArtistModel.prototype = new BaseModel();
 ArtistModel.prototype.use('artists');
 
-ArtistModel.prototype.output = function() {
+ArtistModel.prototype.output = function(admin) {
+  if(admin === true) {
+    return {
+      id: this._id,
+      rev: this._rev,
+      name: this.name,
+      email: this.email,
+      phone: this.phone,
+      website: this.website,
+      location: this.location,
+      description: this.description,
+      bio: this.bio,
+      tags: this.tags,
+      featured: this.featured,
+      active: this.active
+    };
+  }
   return {
+    id: this._id,
     name: this.name,
-    short_description: this.short_description,
+    location: this.location,
+    description: this.description,
     bio: this.bio,
     tags: this.tags,
     featured: this.featured,
     active: this.active
-  }
+  };
 }
 
 module.exports = ArtistModel;

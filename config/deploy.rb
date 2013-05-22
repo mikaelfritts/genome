@@ -29,6 +29,10 @@ namespace :deploy do
     run "cd #{File.join(current_path, 'api')} && npm install"
   end
   
+  task :angular_setup do
+    run "cd #{File.join(current_path, 'frontend')} && npm install && bower install && grunt build"
+  end
+  
   task :start do
     run "sudo forever start #{File.join(current_path, 'api', 'server.js')}"
   end
@@ -44,6 +48,7 @@ namespace :deploy do
   end
   before 'deploy:restart' do
     npm_install
+    angular_setup
   end
 end
 

@@ -138,6 +138,12 @@ module.exports = function(params, clear) {
   });
   createDB('artists', function() {
     var artistsView = {"views": {
+      "only_artists": {
+        "map": function(doc) {
+          if(doc.type === 'artist')
+            emit(doc, doc);
+        }
+      },
       "by_name": {
         "map": function(doc) {
           if(doc.type === 'artist')

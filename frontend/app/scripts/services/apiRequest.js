@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('GenomeApp')
-  .factory('apiRequest', function ($http) {
+  .factory('apiRequest', function ($http, localStorageService) {
     var baseUrl = 'http://0.0.0.0:3458/';
 
     return {

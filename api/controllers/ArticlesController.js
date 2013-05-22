@@ -43,7 +43,7 @@ function ArticlesController(params) {
       return;
     }
     if(featured === true) {
-      db.view('featured_articles', function(err, body) {
+      db.view('articles', 'featured_articles', function(err, body) {
         var articles = [];
         for(i in body.rows) {
           var a = new ArticleModel(body.rows[i].value);

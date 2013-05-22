@@ -1,6 +1,7 @@
 <div class="admin-login">
   <h2>Login to Admin Panel</h2>
   <form name="form" class="css-form" novalidate>
+    <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
     <p>
       <input type="text" name="login" placeholder="Login" ng-model="user.login" required>
     </p>

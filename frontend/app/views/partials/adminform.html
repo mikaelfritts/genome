@@ -1,0 +1,41 @@
+<alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+<div class="formData" ng-init="init()">
+  <form name="form" class="form" ng-show="apiData.currentMethod == 'add' || apiData.currentMethod == 'edit'" novalidate>
+    <div ng-repeat="formField in formFields">
+      <div ng-switch on="formField.type">
+        <input ng-switch-when="hidden" type="hidden" />
+        <label ng-switch-when="checkbox" class="{{formField.type}}">
+          <input type="checkbox" class="input checkbox" name="{{formField.name}}" data-ng-model="formField.value" /> {{formField.title}}
+        </label>
+        <label class="not-checkbox {{formField.type}}">{{formField.title}}</label>
+        <textarea ng-switch-when="textarea" class="input textarea" name="{{formField.name}}" required="{{formField.required}}" data-ng-model="formField.value"></textarea>
+        <input ng-switch-when="text" type="text" class="input" name="{{formField.name}}" required="{{formField.required}}" data-ng-model="formField.value" />
+        <input ng-switch-when="password" type="password" class="input password" name="{{formField.name}}" required="{{formField.required}}" data-ng-model="formField.value" />
+        <input ng-switch-when="email" type="email" class="input email" name="{{formField.name}}" required="{{formField.required}}" data-ng-model="formField.value" />
+        <input ng-switch-when="number" type="number" class="input number" name="{{formField.name}}" required="{{formField.required}}" data-ng-model="formField.value" />
+        <div ng-switch-when="radio">
+          <label ng-repeat="value in formField.options"><input type="radio" class="input checkbox" name="{{formField.name}}" value="{{value}}" data-ng-model="formField.value" /> {{value}}</label>
+        </div>
+        <select ng-switch-when="select" data-ng-model="formField.value" ng-options="o.value as o.name for o in formField.options"></select>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" ng-click="goAction('list')">Cancel</button>
+      <button class="btn btn-primary" ng-click="submitForm(formFields)">Submit</button>
+    </div>
+  </form>
+  <table class="table">
+    <tr>
+      <th ng-repeat="formField in formFields | filter:{listDisplay: true}">{{formField.title}}</th>
+      <th></th>
+      <th><button class="btn btn-success" ng-click="goAction('add')"><i class="icon-plus icon-white"></i></button></th>
+    </tr>
+    <tr ng-repeat="d in apiData.data">
+      <td ng-repeat="formField in formFields | filter:{listDisplay: true}">
+        {{d[formField.name]}}
+      </td>
+      <td><button class="btn btn-info" ng-click="goAction('edit', d.id)"><i class="icon-edit icon-white"></i></button></td>
+      <td><button class="btn btn-danger" ng-click="goAction('delete', d.id)"><i class="icon-remove icon-white"></i></button></td>
+    </tr>
+  </table>
+</div>

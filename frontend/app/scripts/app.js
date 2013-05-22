@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('GenomeApp', ['LocalStorageModule'])
+angular.module('GenomeApp', ['LocalStorageModule', 'ui.bootstrap'])
   .config(['$httpProvider', function($httpProvider) {
     delete $httpProvider.defaults.headers.common["X-Requested-With"];
   }])

@@ -37,8 +37,13 @@ module.exports = function(app, nano, _) {
   app.post( '/notifications/set_read', requiresAuth, notifier.setMessageRead);
   
   app.post( '/articles', articlesController.getArticles);
-  app.post( '/post/articles', requiresAuth, articlesController.postArticle);
-  app.post( '/delete/articles', requiresAuth, articlesController.deleteArticle);
+  app.post( '/post/article', requiresAuth, articlesController.postArticle);
+  app.post( '/delete/article', requiresAuth, articlesController.deleteArticle);
+  
+  app.post( '/artists', artController.getArtists);
+  app.post( '/admin/artists', requiresAuth, artController.getAdminArtists);
+  app.post( '/post/artist', requiresAuth, artController.postArtist);
+  app.post( '/delete/artist', requiresAuth, artController.deleteArtist);
   
   function requiresAuth(req, res, next) {
     return isAuthenticated(req, res, next);
