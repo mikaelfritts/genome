@@ -31,6 +31,10 @@ http://flourishlib.com/docs/ObtainingaSecureCertificateKeyPair
 
 Set configuration options for the app.
 
+> definitions.js
+
+Set definitions for the app, and also specify `default login information`
+
 > schema.js
 
 Contains couchdb setup functions, also ways to test data with clearDB() and listDB()
